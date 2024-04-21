@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-jds14b8=nk4u3zxavy*302s@+u$mj^0vlu3je^0#=h-28jv)b1
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.61']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,7 +40,7 @@ ROOT_URLCONF = 'djoserauthapi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/accounts'), os.path.join(BASE_DIR, 'templates/emails')],
+        'DIRS': [BASE_DIR / 'templates/account'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +73,17 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_USE_TLS = True
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_CONFIRM_EMAIL_ON_GET = False 
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -142,6 +153,6 @@ DJOSER = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://192.168.1.61:8000",
 ]
