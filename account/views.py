@@ -4,13 +4,13 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils.http import urlsafe_base64_decode
 from django.urls import reverse
-from django.contrib import messages  # If you want to use messaging framework
+from django.contrib import messages 
 
 User = get_user_model()
 
-def activate_account(request, uidb64, token):
+def activate_account(request, uid, token):
     try:
-        uid = urlsafe_base64_decode(uidb64).decode('utf-8') 
+        uid = urlsafe_base64_decode(uid).decode('utf-8') 
         user = User.objects.get(pk=uid)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
         return HttpResponse('Activation link is invalid!', status=400)
