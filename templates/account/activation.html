@@ -1,41 +1,40 @@
 {% load i18n %}
 
 {% block subject %}
-{% blocktrans %} Account activation on {{ site_name }}{% endblocktrans %}
+{% blocktrans %} [LAWOD] - Account Activation {% endblocktrans %}
 {% endblock subject %}
 
 {% block text_body %}
-{% blocktrans %} You're receiving this email because you need to finish activation process on {{ site_name }}.{% endblocktrans %}
+{% blocktrans %} We noticed you've nearly reeled in the big one! But before you can start exploring all the prime fishing spots we have to offer, there's just one last step. You need to complete your activation process on Lawod. It's quick and easy—just click the link below, and you'll be on your way to discovering the best fishing around. {{ site_name }}.{% endblocktrans %}
 
 {% trans "Please go to the following page to activate account:" %}
 {{ protocol }}://{{ domain }}/{{ url|safe }}
 
-<i>{% blocktrans %}If you face difficulties on account activation kindly contact us on: contact@geekyshows.com{% endblocktrans %}</i>
+<i>{% blocktrans %}If you face difficulties on account activation kindly contact us on: lawod@gmail.com{% endblocktrans %}</i>
 
 {% endblock text_body %}
 
 {% block html_body %}
-<p>{% blocktrans %} You're receiving this email because you need to finish activation process on {{ site_name }}.{% endblocktrans %}</p>
+<p>{% blocktrans %} We noticed you've nearly reeled in the big one! But before you can start exploring all the prime fishing spots we have to offer, there's just one last step. You need to complete your activation process on Lawod. It's quick and easy—just click the link below, and you'll be on your way to discovering the best fishing around. {{ site_name }}.{% endblocktrans %}</p>
 
+<p style="margin-bottom:20px;"><a style="display: inline-block; padding: 12px 24px; background-color: #196DFF; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;" href="{{ protocol }}://{{ domain }}/{{ url|safe }}">Activate Account</a></p>
 
-<p style="margin-bottom:100px"><a style="display: inline-block; padding: 10px 20px; background-color: red; color: white; text-decoration: none;" href="{{ protocol }}://{{ domain }}/{{ url|safe }}">Activate Account</a></p>
-
-<span>Follow us: </span>
-<div style="display: flex; justify-content: center; align-items: center;">
-  <a href="#" style="margin: 5px; padding: 5px ; border-radius: 10%; background-color: #E1306C; color: white; text-decoration: none; font-size:10px">
-    Instagram
+<span>Follow us:</span>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+  <a href="#" style="margin: 0 10px; padding: 10px 16px; border-radius: 4px; background-color: #196DFF; color: white; text-decoration: none; font-size: 14px;">
+    Facebook
   </a>
-  <a href="#" style="margin: 5px; padding: 5px ; border-radius: 10%; background-color: #1da1f2; color: white; text-decoration: none; font-size:10px">
+  <a href="#" style="margin: 0 10px; padding: 10px 16px; border-radius: 4px; background-color: #196DFF; color: white; text-decoration: none; font-size: 14px;">
     Twitter
   </a>
-  <a href="#" style="margin: 5px; padding: 5px ; border-radius: 10%; background-color: #0077B5; color: white; text-decoration: none; font-size:10px">
+  <a href="#" style="margin: 0 10px; padding: 10px 16px; border-radius: 4px; background-color: #196DFF; color: white; text-decoration: none; font-size: 14px;">
     LinkedIn
   </a>
-  <a href="#" style="margin: 5px; padding: 5px ; border-radius: 10%; background-color: #ff0000; color: white; text-decoration: none; font-size:10px">
-    Youtube
+  <a href="#" style="margin: 0 10px; padding: 10px 16px; border-radius: 4px; background-color: #196DFF; color: white; text-decoration: none; font-size: 14px;">
+    YouTube
   </a>
 </div>
 
-<i>{% blocktrans %}If you face difficulties on account activation kindly contact us on: contact@geekyshows.com{% endblocktrans %}</i>
+<i>{% blocktrans %}If you face difficulties on account activation kindly contact us on: contact@lawod.com{% endblocktrans %}</i>
 
 {% endblock html_body %}
