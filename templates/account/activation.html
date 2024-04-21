@@ -17,7 +17,7 @@
 {% block html_body %}
 <p>{% blocktrans %} We noticed you've nearly reeled in the big one! But before you can start exploring all the prime fishing spots we have to offer, there's just one last step. You need to complete your activation process on Lawod. It's quick and easy—just click the link below, and you'll be on your way to discovering the best fishing around. {{ site_name }}.{% endblocktrans %}</p>
 
-<p style="margin-bottom:20px;"><a style="display: inline-block; padding: 12px 24px; background-color: #196DFF; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;" a href="{{ protocol }}://{{ domain }}/{{ url|safe }}">Activate Account</a></p>
+<a style="display: inline-block; padding: 12px 24px; background-color: #196DFF; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;" href="{{ protocol }}://{{ domain }}/api/auth/users/activation/{{ uid }}/{{ activation_token }}">Activate Account</a>
 
 <span>Follow us:</span>
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
