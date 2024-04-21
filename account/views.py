@@ -1,3 +1,3 @@
 from django.shortcuts import render
 
-# Create your views here.
+email_template_name='accounts/activation.html'

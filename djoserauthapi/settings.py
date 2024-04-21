@@ -40,7 +40,7 @@ ROOT_URLCONF = 'djoserauthapi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates/accounts'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/accounts'), os.path.join(BASE_DIR, 'templates/emails')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
