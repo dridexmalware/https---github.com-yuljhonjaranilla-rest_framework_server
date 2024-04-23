@@ -155,4 +155,6 @@ DJOSER = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
     "http://192.168.1.61:8000",
+    "http://localhost:3000",
+    "http://192.168.1.61:3000",
 ]
