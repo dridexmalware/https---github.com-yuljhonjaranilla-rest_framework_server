@@ -1,3 +1,6 @@
-from django.test import TestCase
+from django.urls import path, include
 
-# Create your tests here.
+urlpatterns = [
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
+]

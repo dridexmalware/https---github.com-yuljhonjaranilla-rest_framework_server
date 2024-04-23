@@ -4,17 +4,17 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 
 class UserModelAdmin(BaseUserAdmin):
-    list_display = ('id', 'name', 'username', 'email', 'is_active', 'is_admin')
+    list_display = ('id', 'first_name', 'last_name', 'username', 'email', 'is_active', 'is_admin')
     list_filter = ('is_admin',)
     fieldsets = (
         ('User Credentials', {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('name', 'username')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'username')}),
         ('Permissions', {'fields': ('is_admin', 'is_active')}),
     )
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'name', 'username', 'password1', 'password2'),
+            'fields': ('email', 'first_name', 'last_name', 'username', 'password1', 'password2'),
         }),
     )
     search_fields = ('email',)
